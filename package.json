@@ -4,7 +4,8 @@
   "description": "cypress-training\r # cypress-training",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "cypress open",
+    "test:open": "cypress open"
   },
   "keywords": [],
   "author": "[cristianbedoya] <[cristianbedoya1991@gmail.com]> ([Mandriva7])",
