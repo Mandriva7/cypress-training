@@ -4,8 +4,11 @@
   "description": "cypress-training\r # cypress-training",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test:open": "npm run lint && cypress open",
     "lint": "eslint ./cypress/e2e/**/*.ts",
+=======
+>>>>>>> 5e0600b (Cambios)
     "test": "cypress run --headless --browser chrome",
     "lint:fix": "npm run lint -- --fix"
   },
