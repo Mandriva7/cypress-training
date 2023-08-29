@@ -7,7 +7,8 @@ module.exports = {
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+        "project": ["/Users/cristianbedoya/Desktop/cypress/cypress-training/tsconfig.json"]
     },
     "plugins": [
         "@typescript-eslint",
@@ -22,5 +23,6 @@ module.exports = {
         "no-unused-vars": "warn",
         "require-jsdoc": "warn",
         "max-len": [ "error", { "code": 120 } ]
-    }
+    },
+
  }
