@@ -1,9 +1,12 @@
-describe("Buy a black t-shirt", () => {
-    it("then the t-shirt should be bought", () => {
-        cy.visit("https://www.saucedemo.com/"); //(1)
-        cy.get(".login-box > form > div > input#user-name").type("standard_user"); //(2)
-        cy.get(".login-box > form > div > input#password").type("secret_sauce"); //(2)
-        cy.get("input[type='submit']").click(); //(2)
+
+ import { LoginPage } from "../page/index";
+
+ const loginPage = new LoginPage();
+
+ describe("Buy a black t-shirt", () => {
+   it("then the t-shirt should be bought", () => {
+     loginPage.visitLoginPage();
+     loginPage.signIn("standard_user", "secret_sauce");
         cy.get(":nth-child(1) > .inventory_item_description").select;//(3)
         cy.get("[data-test=\"add-to-cart-sauce-labs-bolt-t-shirt\"]").click();//(4)
         cy.get(".shopping_cart_link").click();//(5)
