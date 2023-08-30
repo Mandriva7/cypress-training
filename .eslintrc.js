@@ -1,4 +1,5 @@
 module.exports = {
+    root: true,
     "env": {
         "browser": true,
         "es2021": true
@@ -8,7 +9,7 @@ module.exports = {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
-        "project": ["/Users/cristianbedoya/Desktop/cypress/cypress-training/tsconfig.json"]
+        "project": ["Users/cristianbedoya/Desktop/cypress/cypress-training/tsconfig.json"]
     },
     "plugins": [
         "@typescript-eslint",
