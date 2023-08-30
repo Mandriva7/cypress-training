@@ -9,8 +9,7 @@ module.exports = {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
-        "project": ["Users/cristianbedoya/Desktop/cypress/cypress-training/tsconfig.json"]
-    },
+        "project": ["./tsconfig.json"]},
     "plugins": [
         "@typescript-eslint",
         "cypress"
