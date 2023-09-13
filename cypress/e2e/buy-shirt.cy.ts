@@ -1,15 +1,24 @@
 
- import { LoginPage } from "../page/index";
+ import { LoginPage } from "../page/login.page";
+ import { Index } from "../page/index";
+ import { ItemPage } from "../page/item.page";
+ import { AddProductShoppingC } from "../page/products-list.page";
+ import { ShoppingcartCheckout } from "../page/shopping-cart.page";
+ 
 
  const loginPage = new LoginPage();
+ const index = new Index();
+ const itemPage = new ItemPage();
+ const addProductShoppingC = new AddProductShoppingC();
+ const shoppingcartCheckout = new ShoppingcartCheckout();
 
  describe("Buy a black t-shirt", () => {
    it("then the t-shirt should be bought", () => {
      loginPage.visitLoginPage();
      loginPage.signIn("standard_user", "secret_sauce");
-        cy.get("#item_1_title_link > .inventory_item_name").select;//(3)
-        cy.get("#add-to-cart-sauce-labs-bolt-t-shirt").click();//(4)
-        cy.get(".shopping_cart_link").click();//(5)
+     index.SelectrProduct();
+     itemPage.ClickItem();
+     addProductShoppingC.addProductToShoppingCart();
         cy.get("#checkout").click();//(6)
         cy.get("#first-name").type("Cypress"); //(7)
         cy.get("#last-name").type("Workshop"); //(8)
