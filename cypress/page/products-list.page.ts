@@ -1,5 +1,5 @@
 
-class AddProductShoppingC {
+export class AddProductShoppingC {
     private addToShoppingCart: string;
     private shoppingCartLink: string;
     constructor() {
@@ -12,4 +12,3 @@ class AddProductShoppingC {
     }
 }
 
-  export { AddProductShoppingC };

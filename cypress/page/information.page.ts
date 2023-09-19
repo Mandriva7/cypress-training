@@ -1,5 +1,5 @@
 
-class InformationPage {
+export class InformationPage {
     private firstName: string;
     private lasttName: string;
     private postalCode: string;
@@ -19,4 +19,4 @@ class InformationPage {
         cy.get(this.ContinueButton).click;
       }
 }
-  export { InformationPage };
+

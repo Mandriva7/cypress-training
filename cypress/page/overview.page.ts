@@ -1,5 +1,5 @@
 
-class OverviewPage {
+export class OverviewPage {
     private finishButton: string;
   
     constructor() {
@@ -10,4 +10,4 @@ class OverviewPage {
       cy.get(this.finishButton).click;
     }
 }
-  export { OverviewPage };
+

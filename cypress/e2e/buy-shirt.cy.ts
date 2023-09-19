@@ -1,5 +1,7 @@
 
- import { LoginPage, Dashboard, ItemPage, AddProductShoppingC, ShoppingcartCheckout, InformationPage, OverviewPage, CheckoutCompletePage  } from "../page/index";
+
+
+ import { LoginPage,Dashboard,ItemPage,AddProductShoppingC,ShoppingcartCheckout,InformationPage,OverviewPage,CheckoutCompletePage} from "../page/index";
 
  const loginPage = new LoginPage();
  const dashboard = new Dashboard();
