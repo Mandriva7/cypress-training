@@ -1,5 +1,5 @@
 
-class ShoppingcartCheckout {
+export class ShoppingcartCheckout {
     private CheckoutButton: string;
     constructor() {
       this.CheckoutButton = "#checkout";
@@ -8,4 +8,3 @@ class ShoppingcartCheckout {
       cy.get(this.CheckoutButton).click;
     }
 }
-  export { ShoppingcartCheckout };

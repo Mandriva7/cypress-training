@@ -1,4 +1,6 @@
-class LoginPage {
+
+
+export class LoginPage {
     private loginURL: string;
     private userNameField: string;
     private passwordField: string;
@@ -18,4 +20,4 @@ class LoginPage {
       cy.get(this.loginButton).click();
     }
   }
-  export { LoginPage };
+

@@ -1,5 +1,5 @@
 
-class ItemPage {
+export class ItemPage {
     private itemClick: string;
     constructor() {
       this.itemClick = "#item_1_title_link";
@@ -8,4 +8,3 @@ class ItemPage {
       cy.get(this.itemClick).click;
     }
 }
-  export { ItemPage };

@@ -1,12 +1,11 @@
 
-class Index {
-    private itemSelected: string;
-    constructor() {
-      this.itemSelected = "#item_1_title_link > .inventory_item_name";
-    }
-    public SelectrProduct(): void {
-      cy.get(this.itemSelected).select;
-    }
-}
 
-  export { Index };
+
+export { LoginPage } from "./login.page";
+export { Dashboard } from "./dashboard";
+export { ItemPage } from "./item.page";
+export { AddProductShoppingC } from "./products-list.page";
+export { ShoppingcartCheckout } from "./shopping-cart.page";
+export { InformationPage } from "./information.page";
+export { OverviewPage } from "./overview.page";
+export { CheckoutCompletePage } from "./checkout-complete.page";
