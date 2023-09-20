@@ -7,8 +7,7 @@ export class AddProductShoppingC {
       this.shoppingCartLink = ".shopping_cart_link";
     }
     public addProductToShoppingCart(): void {
-      cy.get(this.addToShoppingCart).click;
-      cy.get(this.shoppingCartLink).click;
+      cy.get(this.addToShoppingCart).click();
+      cy.get(this.shoppingCartLink).click();
     }
 }
-

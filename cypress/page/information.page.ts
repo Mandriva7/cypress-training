@@ -16,7 +16,6 @@ export class InformationPage {
       cy.get(this.postalCode).type(postalCode);
     }
     public ClickContinueButton(): void {
-        cy.get(this.ContinueButton).click;
+        cy.get(this.ContinueButton).click();
       }
 }
-

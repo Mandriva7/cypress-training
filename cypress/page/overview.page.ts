@@ -7,7 +7,6 @@ export class OverviewPage {
    
     }
     public ClickFinishButton(): void {
-      cy.get(this.finishButton).click;
+      cy.get(this.finishButton).click();
     }
 }
-

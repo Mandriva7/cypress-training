@@ -5,6 +5,6 @@ export class ShoppingcartCheckout {
       this.CheckoutButton = "#checkout";
     }
     public ClickcheckoutButton(): void {
-      cy.get(this.CheckoutButton).click;
+      cy.get(this.CheckoutButton).click();
     }
 }
