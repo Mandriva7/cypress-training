@@ -4,10 +4,16 @@
   "description": "cypress-training\r # cypress-training",
   "main": "index.js",
   "scripts": {
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports ",
+    "pretest": "npm run clean:reports",
+    "combine:reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/report.json",
+    "generate:reports": "marge cypress/reports/report.json -f report -o cypress/reports",
+    "cypress:reports": "npm run cypress:run && npm run combine:reports && npm run generate:reports",
     "test:open": "npm run lint && cypress open",
     "lint": "eslint ./cypress/e2e/**/*.ts",
     "test": "cypress run --headless --browser chrome",
     "lint:fix": "npm run lint -- --fix"
+    
   },
   "keywords": [],
   "author": "[cristianbedoya] <[cristianbedoya1991@gmail.com]> ([Mandriva7])",
@@ -25,6 +31,11 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "cypress-multi-reporters": "^1.4.0",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0",
     "ansi-escapes": "^4.3.2",
     "ansi-regex": "^5.0.1",
     "ansi-styles": "^4.3.0",
