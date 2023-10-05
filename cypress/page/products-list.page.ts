@@ -1,13 +1,22 @@
+import { contains } from "cypress/types/jquery";
 
 export class AddProductShoppingC {
     private addToShoppingCart: string;
     private shoppingCartLink: string;
+    private productsListed: string;
+   
+
     constructor() {
-      this.addToShoppingCart = "#add-to-cart-sauce-labs-bolt-t-shirt";
+      this.addToShoppingCart = "Sauce Labs Bike Light";
       this.shoppingCartLink = ".shopping_cart_link";
+      this.productsListed = ".inventory_item_name";
+     
+    }
+    public findProductByName(): void {
+      cy.get(this.productsListed).contains(this.addToShoppingCart).click();
     }
     public addProductToShoppingCart(): void {
-      cy.get(this.addToShoppingCart).click();
+      cy.contains(/Add to cart/).click();
       cy.get(this.shoppingCartLink).click();
     }
 }
