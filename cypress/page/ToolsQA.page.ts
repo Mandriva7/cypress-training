@@ -1,5 +1,4 @@
 import { contains } from "cypress/types/jquery";
-
 export class ToolsQA {
     private demoqaURL : string;
     private nameField: string;
@@ -8,17 +7,33 @@ export class ToolsQA {
     private genderField: string;
     private dateOfBirthField: string;
     private mobileNumberField: string;
-    private hobbiesField: string;
+    private hobbiesFieldOne: string;
+    private hobbiesFieldTwo: string;
     private currentAddressField: string;
+
+
+    private DatePicketMonthSelected : string;
+    private DatePicketYearSelected : string;
+    private DatePicketDaySelected : string;
+
     constructor() {
       this.demoqaURL = "https://demoqa.com/automation-practice-form";
       this.nameField = "#firstName";
       this.lastNameField = "#lastName";
       this.emailField = "#userEmail";
-      this.genderField = "input [value='Male']";
-      this.dateOfBirthField = ".#dateOfBirthInput";
+      this.genderField = "[value='Male']";
+      this.dateOfBirthField = "#dateOfBirthInput";
+
+
+      this.DatePicketMonthSelected = ".react-datepicker__month-select"
+      this.DatePicketYearSelected = ".react-datepicker__year-select"
+      this.DatePicketDaySelected = ".react-datepicker__day--018"
+
       this.mobileNumberField = "#userNumber";
-      this.hobbiesField = "#col-md-9 col-sm-12 > custom-control custom-checkbox custom-control-inline > .hobbies-checkbox-1";
+
+      this.hobbiesFieldOne = "[value='2']";
+      this.hobbiesFieldTwo = "[value='3']";
+
       this.currentAddressField = "#currentAddress";
     }
     public visitDemoURL(): void {
@@ -29,9 +44,17 @@ export class ToolsQA {
       cy.get(this.lastNameField).type(ObjectData.lastName);
       cy.get(this.emailField).type(ObjectData.email);
       cy.get(this.genderField).check({force:true});
-      cy.get(this.dateOfBirthField).type(ObjectData.dateOfBirthField);
-      cy.get(this.mobileNumberField).type(ObjectData.mobileNumberField);
-      cy.get(this.hobbiesField).check().should('be.checked');
-      cy.get(this.currentAddressField).type(ObjectData.currentAddressField);
+      //type(ObjectData.dateOfBirth);
+      cy.get(this.dateOfBirthField).click();
+      cy.get(this.DatePicketMonthSelected).select(1);
+      cy.get(this.DatePicketYearSelected).select("1991");
+      cy.get(this.DatePicketDaySelected).click();
+
+      cy.get(this.mobileNumberField).type(ObjectData.mobileNumber);
+
+      cy.get(this.hobbiesFieldOne).check({force:true});
+      cy.get(this.hobbiesFieldTwo).check({force:true});
+
+      cy.get(this.currentAddressField).type(ObjectData.currentAddress);
     }
 }
