@@ -24,5 +24,7 @@ reporterOptions: {
      return config;
      return config;
     },
+    viewportWidth: 1800,
+  viewportHeight: 1600,
   },
 });

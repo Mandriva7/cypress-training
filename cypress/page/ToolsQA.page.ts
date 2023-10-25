@@ -16,6 +16,16 @@ export class ToolsQA {
     private DatePicketYearSelected : string;
     private DatePicketDaySelected : string;
 
+    private DroDownListState : string;
+    private DroDownListStateOption : string;
+    private DroDownListCity : string;
+    private DroDownListCityOption : string;
+
+    private SubmitButton : string;
+    
+    private Table : string;
+    
+
     constructor() {
       this.demoqaURL = "https://demoqa.com/automation-practice-form";
       this.nameField = "#firstName";
@@ -35,6 +45,15 @@ export class ToolsQA {
       this.hobbiesFieldTwo = "[value='3']";
 
       this.currentAddressField = "#currentAddress";
+
+      this.DroDownListState = "#state";
+      this.DroDownListStateOption = "#react-select-3-option-2";
+      this.DroDownListCity = "#city"; 
+      this.DroDownListCityOption = "#react-select-4-option-0";
+
+      this.SubmitButton = "#submit";
+
+      this.Table = "#table table-dark table-striped table-bordered table-hover";
     }
     public visitDemoURL(): void {
       cy.visit(this.demoqaURL);
@@ -56,5 +75,18 @@ export class ToolsQA {
       cy.get(this.hobbiesFieldTwo).check({force:true});
 
       cy.get(this.currentAddressField).type(ObjectData.currentAddress);
+
+      cy.get(this.DroDownListState).click();
+      cy.get(this.DroDownListStateOption).click();
+      cy.get(this.DroDownListCity).click();
+      cy.get(this.DroDownListCityOption).click();
+
+      cy.get(this.SubmitButton).click();
+
+      cy.get(this.Table).getTable()
+    }
+
+    public validateTableData(): void {
+      cy
     }
 }
