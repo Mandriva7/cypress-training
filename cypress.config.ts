@@ -2,6 +2,17 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
+    reporter: "cypress-multi-reporters",
+reporterOptions: {
+  reporterEnabled: "mochawesome",
+  mochawesomeReporterOptions: {
+    reportDir: "cypress/reports/mocha",
+    quite: true,
+    overwrite: false,
+    html: false,
+    json: true,
+  },
+},
     video: false,
     screenshotOnRunFailure: false,
     chromeWebSecurity: false,
@@ -13,5 +24,7 @@ export default defineConfig({
      return config;
      return config;
     },
+    viewportWidth: 1800,
+  viewportHeight: 1600,
   },
 });

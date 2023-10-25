@@ -16,7 +16,8 @@
      loginPage.visitLoginPage();
      loginPage.signIn("standard_user", "secret_sauce");
      dashboard.SelectrProduct();
-     itemPage.ClickItem();
+     //itemPage.ClickItem();
+     addProductShoppingC.findProductByName();
      addProductShoppingC.addProductToShoppingCart();
      shoppingcartCheckout.ClickcheckoutButton();
      informationPage.IngresarInformacion("standard_user", "secret_sauce", "0000");
